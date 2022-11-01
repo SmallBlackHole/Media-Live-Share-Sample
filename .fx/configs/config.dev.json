@@ -1,0 +1,18 @@
+{
+    "$schema": "https://aka.ms/teamsfx-env-config-schema",
+    "description": "You can customize the TeamsFx config for different environments. Visit https://aka.ms/teamsfx-env-config to learn more about this.",
+    "manifest": {
+        "appName": {
+            "short": "Media-Live-Share-Sample",
+            "full": "Full name for Media-Live-Share-Sample"
+        },
+        "description": {
+            "short": "Short description of Media-Live-Share-Sample",
+            "full": "Full description of Media-Live-Share-Sample"
+        },
+        "icons": {
+            "color": "resources/color.png",
+            "outline": "resources/outline.png"
+        }
+    }
+}
