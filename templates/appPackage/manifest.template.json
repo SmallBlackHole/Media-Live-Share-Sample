@@ -27,22 +27,14 @@
     "composeExtensions": [],
     "configurableTabs": [
         {
-            "configurationUrl": "{{{state.fx-resource-frontend-hosting.endpoint}}}{{{state.fx-resource-frontend-hosting.indexPath}}}/config",
-            "canUpdateConfiguration": true,
+            "configurationUrl": "{{{state.fx-resource-frontend-hosting.endpoint}}}/config?inTeams=true",
+            "canUpdateConfiguration": false,
             "scopes": [
-                "team",
                 "groupchat"
-            ]
-        }
-    ],
-    "staticTabs": [
-        {
-            "entityId": "index0",
-            "name": "Personal Tab",
-            "contentUrl": "{{{state.fx-resource-frontend-hosting.endpoint}}}{{{state.fx-resource-frontend-hosting.indexPath}}}/tab",
-            "websiteUrl": "{{{state.fx-resource-frontend-hosting.endpoint}}}{{{state.fx-resource-frontend-hosting.indexPath}}}/tab",
-            "scopes": [
-                "personal"
+            ],
+            "context": [
+                "meetingSidePanel",
+                "meetingStage"
             ]
         }
     ],
@@ -51,6 +43,39 @@
         "messageTeamMembers"
     ],
     "validDomains": [
-        "{{state.fx-resource-frontend-hosting.domain}}"
-    ]
+        "{{state.fx-resource-frontend-hosting.domain}}",
+        "*.ngrok.io"
+    ],
+    "showLoadingIndicator": true,
+    "authorization": {
+        "permissions": {
+            "orgWide": [],
+            "resourceSpecific": [
+                {
+                    "name": "MeetingStage.Write.Chat",
+                    "type": "Delegated"
+                },
+                {
+                    "name": "ChannelMeetingStage.Write.Group",
+                    "type": "Delegated"
+                },
+                {
+                    "name": "LiveShareSession.ReadWrite.Chat",
+                    "type": "Delegated"
+                },
+                {
+                    "name": "LiveShareSession.ReadWrite.Group",
+                    "type": "Delegated"
+                },
+                {
+                    "name": "OnlineMeetingIncomingAudio.Detect.Chat",
+                    "type": "Delegated"
+                },
+                {
+                    "name": "OnlineMeetingIncomingAudio.Detect.Group",
+                    "type": "Delegated"
+                }
+            ]
+        }
+    }
 }
